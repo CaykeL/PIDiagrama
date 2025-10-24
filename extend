@@ -1,41 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Projeto>
-    <DiagramaClasses>
+@startuml DiagramaClassesProjeto
 
-        <Classe nome="Pessoa">
-            <Atributo nome="cpf" tipo="String" visibilidade="Privado" responsabilidade="Armazenar o cpf"/>
-            <Atributo nome="nome" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o nome completo"/>
-            <Atributo nome="email" tipo="String" visibilidade="Privado" responsabilidade="Armazenar o email"/>
-            <Atributo nome="endereco" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o endereço do aluno"/>
-            </Classe>
+' Estilo para visibilidade
+' private: -
+' public: +
 
-        <Classe nome="Aluno">
-            <Atributo nome="instituicaoEnsino" tipo="String" visibilidade="Publica" responsabilidade="Armazenar a Instituição de Ensino do aluno"/>
-        </Classe>
+' Classe Pessoa (Superclasse base)
+class Pessoa {
+  - cpf : String
+  + nome : String
+  - email : String
+  + endereco : String
+}
 
-        <Classe nome="ListaPresenca">
-            <Atributo nome="nomeDoAluno" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o nome do aluno na lista"/>
-            <Atributo nome="presenca" tipo="Boolean" visibilidade="Publica" responsabilidade="Armazenar se o aluno estará presente"/>
-        </Classe>
+' Classe Aluno
+class Aluno {
+  + instituicaoEnsino : String
+}
 
-        <Classe nome="Usuario">
-            <Atributo nome="login" tipo="String" visibilidade="Privado" responsabilidade="Armazenar o login do usuario"/>
-            <Atributo nome="senha" tipo="String" visibilidade="Privado" responsabilidade="Armazenar a senha do usuario"/>
-        </Classe>
+' Classe Funcionario
+class Funcionario {
+  + cargo : String
+}
 
-        <Classe nome="Funcionario">
-            <Atributo nome="cargo" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o cargo do funcionario"/>
-        </Classe>
+' Classe Motorista
+class Motorista {
+  + crh : String
+  + rota : String
+}
 
-        <Classe nome="Motorista">
-            <Atributo nome="crh" tipo="String" visibilidade="Publica" responsabilidade="Armazenar a crh do motorista"/>
-            <Atributo nome="rota" tipo="String" visibilidade="Publica" responsabilidade="Armazenar a rota"/>
-        </Classe>
+' Classe Usuario
+class Usuario {
+  - login : String
+  - senha : String
+}
 
-        <Classe nome="Perfil">
-            <Atributo nome="tipoPerfil" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o tipo do perfil"/>
-            <Atributo nome="permissoes" tipo="List&lt;String&gt;" visibilidade="Publica" responsabilidade="Armazenar as permissões dos perfis"/>
-        </Classe>
+' Classe ListaPresenca
+' Se o aluno está presente na lista, há uma associação
+class ListaPresenca {
+  + nomeDoAluno : String
+  + presenca : Boolean
+}
 
-        </DiagramaClasses>
-</Projeto>
+' Classe Perfil
+class Perfil {
+  + tipoPerfil : String
+  + permissoes : List<String>
+}
+
+' --- Relações de Herança (Generalização) ---
+
+' Aluno é um tipo de Pessoa
+Pessoa <|-- Aluno
+
+' Funcionario é um tipo de Pessoa
+Pessoa <|-- Funcionario
+
+' Motorista é um tipo de Funcionario
+Funcionario <|-- Motorista
+
+' --- Relações de Associação Comuns ---
+
+' Um Usuário pode ter um Perfil (Associação 1 para 1)
+Usuario "1" -- "1" Perfil : tem
+
+' Uma ListaPresenca pode estar associada a um Aluno
+Aluno "1" -- "0..*" ListaPresenca : está associado a
+
+@enduml
