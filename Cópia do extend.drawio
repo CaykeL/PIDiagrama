@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 OPR/122.0.0.0" version="28.2.8">
+  <diagram name="Classes UML Revisado" id="uml_diagram_revisado">
+    <mxGraphModel dx="2281" dy="2001" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pessoa" value="&lt;b&gt;Pessoa&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;- cpf: String {Privado}&lt;br&gt;+ nome: String {Publica}&lt;br&gt;- email: String {Privado}&lt;br&gt;+ endereco: String {Publica}&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ exibirDados(): void&lt;br&gt;+ atualizarEmail(novoEmail: String): void&lt;br&gt;+ setCpf(cpf: String): void&lt;br&gt;+ getCpf(): String&lt;br&gt;+ setEmail(email: String): void&lt;br&gt;+ getEmail(): String&lt;br&gt;+ atualizarEndereco(novoEndereco: String): void" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="350" y="50" width="300" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="aluno" value="&lt;b&gt;Aluno&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;+ instituicaoEnsino: String {Publica}&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ atualizarInstituicao(novaInstituicao: String): void" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="380" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="funcionario" value="&lt;b&gt;Funcionario&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;+ cargo: String {Publica}&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ registrarAluno(nomeAluno: String): void&lt;br&gt;+ gerenciarRota(rota: String): void" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="350" y="380" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="motorista" value="&lt;b&gt;Motorista&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;+ cnh: String {Publica}&lt;br&gt;+ rota: String {Publica} &lt;i&gt;(Detalhe da Rota)&lt;/i&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ iniciarRota(): void&lt;br&gt;+ finalizarRota(): void&lt;br&gt;+ confirmarEmbarque(nomeAluno: String): void" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="700" y="380" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="0Q3kV8BGqF_EHmTLOzLn-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="usuario" target="perfil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="usuario" value="&lt;b&gt;Usuario&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;- login: String {Privado}&lt;br&gt;- senha: String {Privado}&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ autenticar(login: String, senha: String): boolean&lt;br&gt;+ alterarSenha(novaSenha: String): void&lt;br&gt;+ setLogin(login: String): void&lt;br&gt;+ getLogin(): String&lt;br&gt;+ setSenha(senha: String): void&lt;br&gt;+ getSenha(): String" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="750" y="75" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="perfil" value="&lt;b&gt;Perfil&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;+ tipoPerfil: String {Publica}&lt;br&gt;+ permissoes: List&amp;lt;String&amp;gt; {Publica}&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ atribuirPermissao(acao: String): void&lt;br&gt;+ listarPermissoes(): void" style="html=1;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="740" y="-170" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lista_presenca" value="&lt;b&gt;ListaPresenca&lt;/b&gt;&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Atributos:&lt;/i&gt;&lt;br&gt;+ nomeDoAluno: String {Publica}&lt;br&gt;+ presenca: Boolean {Publica}&lt;hr&gt;&lt;i style=&quot;font-size: 10px&quot;&gt;Métodos:&lt;/i&gt;&lt;br&gt;+ confirmarPresenca(): void&lt;br&gt;+ registrarPresenca(nomeAluno: String): void&lt;br&gt;+ gerarRelatorio(): void" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Helvetica;fontSize=12;align=left;verticalAlign=top;spacingLeft=4;fontStyle=0;rounded=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="-20" y="90" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lig_pessoa_aluno" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#000000);" parent="1" source="aluno" target="pessoa" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="175" y="380" as="sourcePoint" />
+            <mxPoint x="500" y="300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="175" y="340" />
+              <mxPoint x="500" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lig_pessoa_funcionario" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#000000);" parent="1" source="funcionario" target="pessoa" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="500" y="380" as="sourcePoint" />
+            <mxPoint x="500" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lig_pessoa_motorista" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;strokeColor=light-dark(#000000,#000000);" parent="1" source="motorista" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="850" y="380" as="sourcePoint" />
+            <mxPoint x="500" y="300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="340" />
+              <mxPoint x="500" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw1tRd9DHL9ET1dRgKGN-5" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#000000);" parent="1" source="lista_presenca" target="pessoa" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="430" as="sourcePoint" />
+            <mxPoint x="730" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw1tRd9DHL9ET1dRgKGN-13" value="" style="endArrow=none;html=1;rounded=0;startArrow=diamond;startFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#000000);" parent="1" source="usuario" target="pessoa" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="871" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="122" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0Q3kV8BGqF_EHmTLOzLn-4" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeColor=light-dark(#000000,#000000);entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="perfil" target="usuario">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="30" as="sourcePoint" />
+            <mxPoint x="780" y="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
