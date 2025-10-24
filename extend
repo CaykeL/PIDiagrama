@@ -1,66 +1,109 @@
-<mxfile host="app.diagrams.net" modified="2025-10-24T00:00:00.000Z" agent="5.0 (Windows)" version="24.7.12" type="device">
-  <diagram id="projetoUML" name="Diagrama de Classes">
-    <mxGraphModel dx="2000" dy="2000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff">
-      <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<projeto>
+    <classes>
 
-        <!-- CLASSE PESSOA -->
-        <mxCell id="Pessoa" value="Pessoa&#xa;----------------------&#xa;+ nome : String&#xa;- cpf : String&#xa;- email : String&#xa;&#xa;+ exibirDados() : void&#xa;+ atualizarEmail(novoEmail:String) : void&#xa;+ setCpf(cpf:String) : void&#xa;+ getCpf() : String&#xa;+ setEmail(email:String) : void&#xa;+ getEmail() : String" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1">
-          <mxGeometry x="120" y="80" width="230" height="250" as="geometry"/>
-        </mxCell>
+        <classe nome="Pessoa">
+            <atributos>
+                <atributo nome="cpf" tipo="String" visibilidade="Privado" responsabilidade="Armazenar o cpf"/>
+                <atributo nome="nome" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o nome completo"/>
+                <atributo nome="email" tipo="String" visibilidade="Privado" responsabilidade="Armazenar o email"/>
+            </atributos>
 
-        <!-- CLASSE ALUNO -->
-        <mxCell id="Aluno" value="Aluno&#xa;----------------------&#xa;+ endereco : String&#xa;+ instituicaoEnsino : String&#xa;&#xa;+ atualizarEndereco(novoEndereco:String) : void&#xa;+ atualizarInstituicao(novaInstituicao:String) : void&#xa;+ confirmarPresenca() : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1">
-          <mxGeometry x="440" y="80" width="230" height="230" as="geometry"/>
-        </mxCell>
+            <metodos>
+                <metodo nome="exibirDados" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Exibir os dados (cpf, nome, email) da pessoa"/>
+                <metodo nome="atualizarEmail" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String novoEmail" responsabilidade="Atualizar o email"/>
+                <metodo nome="setCpf" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String cpf" responsabilidade="Alterar o cpf da pessoa"/>
+                <metodo nome="getCpf" tipoRetorno="String" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Obter o cpf da pessoa"/>
+                <metodo nome="setEmail" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String email" responsabilidade="Alterar o email da pessoa"/>
+                <metodo nome="getEmail" tipoRetorno="String" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Obter o email da pessoa"/>
+            </metodos>
+        </classe>
 
-        <!-- CLASSE LISTA PRESENCA -->
-        <mxCell id="ListaPresenca" value="ListaPresenca&#xa;----------------------&#xa;+ nomeDoAluno : String&#xa;+ presenca : Boolean&#xa;&#xa;+ registrarPresenca(nomeAluno:String) : void&#xa;+ gerarRelatorio() : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1">
-          <mxGeometry x="780" y="80" width="230" height="200" as="geometry"/>
-        </mxCell>
+        <classe nome="Aluno" herdaDe="Pessoa">
+            <atributos>
+                <atributo nome="endereco" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o endereço do aluno"/>
+                <atributo nome="instituicaoEnsino" tipo="String" visibilidade="Publica" responsabilidade="Armazenar a instituição de ensino do aluno"/>
+            </atributos>
 
-        <!-- CLASSE USUARIO -->
-        <mxCell id="Usuario" value="Usuario&#xa;----------------------&#xa;- login : String&#xa;- senha : String&#xa;&#xa;+ autenticar(login:String, senha:String) : boolean&#xa;+ alterarSenha(novaSenha:String) : void&#xa;+ setLogin(login:String) : void&#xa;+ getLogin() : String&#xa;+ setSenha(senha:String) : void&#xa;+ getSenha() : String" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1">
-          <mxGeometry x="120" y="400" width="250" height="270" as="geometry"/>
-        </mxCell>
+            <metodos>
+                <metodo nome="atualizarEndereco" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String novoEndereco" responsabilidade="Atualizar o endereço do aluno"/>
+                <metodo nome="atualizarInstituicao" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String novaInstituicao" responsabilidade="Atualizar a instituição do aluno"/>
+                <metodo nome="confirmarPresenca" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Confirmar a presença do aluno"/>
+            </metodos>
+        </classe>
 
-        <!-- CLASSE FUNCIONARIO -->
-        <mxCell id="Funcionario" value="Funcionario&#xa;----------------------&#xa;+ cargo : String&#xa;&#xa;+ registrarAluno(nomeAluno:String) : void&#xa;+ gerenciarRota(rota:String) : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1">
-          <mxGeometry x="440" y="400" width="230" height="180" as="geometry"/>
-        </mxCell>
+        <classe nome="ListaPresenca">
+            <atributos>
+                <atributo nome="nomeDoAluno" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o nome do aluno na lista"/>
+                <atributo nome="presenca" tipo="Boolean" visibilidade="Publica" responsabilidade="Armazenar se o aluno estará presente"/>
+            </atributos>
 
-        <!-- CLASSE MOTORISTA -->
-        <mxCell id="Motorista" value="Motorista&#xa;----------------------&#xa;+ cnh : String&#xa;+ rota : String&#xa;&#xa;+ iniciarRota() : void&#xa;+ finalizarRota() : void&#xa;+ confirmarEmbarque(nomeAluno:String) : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5e1e1;strokeColor=#cc6666;" vertex="1">
-          <mxGeometry x="780" y="400" width="230" height="210" as="geometry"/>
-        </mxCell>
+            <metodos>
+                <metodo nome="registrarPresenca" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String nomeAluno" responsabilidade="Registrar a presença do aluno"/>
+                <metodo nome="gerarRelatorio" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Gerar o relatório da lista de presença"/>
+            </metodos>
+        </classe>
 
-        <!-- CLASSE PERFIL -->
-        <mxCell id="Perfil" value="Perfil&#xa;----------------------&#xa;+ tipoPerfil : String&#xa;+ permissoes : List&lt;String&gt;&#xa;&#xa;+ atribuirPermissao(acao:String) : void&#xa;+ listarPermissoes() : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#3366cc;" vertex="1">
-          <mxGeometry x="120" y="720" width="250" height="200" as="geometry"/>
-        </mxCell>
+        <classe nome="Usuario">
+            <atributos>
+                <atributo nome="login" tipo="String" visibilidade="Privado" responsabilidade="Armazenar o login do usuário"/>
+                <atributo nome="senha" tipo="String" visibilidade="Privado" responsabilidade="Armazenar a senha do usuário"/>
+            </atributos>
 
-        <!-- HERANÇAS -->
-        <mxCell id="HerancaAluno" edge="1" source="Pessoa" target="Aluno" style="endArrow=block;endFill=0;dashed=1;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="HerancaFuncionario" edge="1" source="Pessoa" target="Funcionario" style="endArrow=block;endFill=0;dashed=1;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="HerancaMotorista" edge="1" source="Pessoa" target="Motorista" style="endArrow=block;endFill=0;dashed=1;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+            <metodos>
+                <metodo nome="autenticar" tipoRetorno="boolean" visibilidade="Publica" parametrosEntrada="String login, String senha" responsabilidade="Autenticar o login e senha do usuário"/>
+                <metodo nome="alterarSenha" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String novaSenha" responsabilidade="Alterar a senha do usuário"/>
+                <metodo nome="setLogin" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String login" responsabilidade="Alterar o login do usuário"/>
+                <metodo nome="getLogin" tipoRetorno="String" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Obter o login do usuário"/>
+                <metodo nome="setSenha" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String senha" responsabilidade="Alterar a senha do usuário"/>
+                <metodo nome="getSenha" tipoRetorno="String" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Obter a senha do usuário"/>
+            </metodos>
+        </classe>
 
-        <!-- AGREGAÇÕES -->
-        <mxCell id="AgregacaoPessoaUsuario" edge="1" source="Pessoa" target="Usuario" style="startArrow=diamondThin;startFill=0;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+        <classe nome="Funcionario" herdaDe="Pessoa">
+            <atributos>
+                <atributo nome="cargo" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o cargo do funcionário"/>
+            </atributos>
 
-        <mxCell id="AgregacaoPerfilUsuario" edge="1" source="Perfil" target="Usuario" style="startArrow=diamondThin;startFill=0;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+            <metodos>
+                <metodo nome="registrarAluno" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String nomeAluno" responsabilidade="Registrar o aluno no sistema"/>
+                <metodo nome="gerenciarRota" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String rota" responsabilidade="Gerenciar a rota"/>
+            </metodos>
+        </classe>
 
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
+        <classe nome="Motorista" herdaDe="Pessoa">
+            <atributos>
+                <atributo nome="cnh" tipo="String" visibilidade="Publica" responsabilidade="Armazenar a CNH do motorista"/>
+                <atributo nome="rota" tipo="String" visibilidade="Publica" responsabilidade="Armazenar a rota"/>
+            </atributos>
+
+            <metodos>
+                <metodo nome="iniciarRota" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Iniciar a rota até a instituição de ensino"/>
+                <metodo nome="finalizarRota" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Finalizar a rota"/>
+                <metodo nome="confirmarEmbarque" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String nomeAluno" responsabilidade="Confirmar o embarque do aluno"/>
+            </metodos>
+        </classe>
+
+        <classe nome="Perfil">
+            <atributos>
+                <atributo nome="tipoPerfil" tipo="String" visibilidade="Publica" responsabilidade="Armazenar o tipo de perfil"/>
+                <atributo nome="permissoes" tipo="List&lt;String&gt;" visibilidade="Publica" responsabilidade="Armazenar as permissões dos perfis"/>
+            </atributos>
+
+            <metodos>
+                <metodo nome="atribuirPermissao" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="String acao" responsabilidade="Atribuir permissões no sistema para o perfil"/>
+                <metodo nome="listarPermissoes" tipoRetorno="void" visibilidade="Publica" parametrosEntrada="N/A" responsabilidade="Listar as permissões do perfil"/>
+            </metodos>
+        </classe>
+
+    </classes>
+
+    <relacoes>
+        <heranca subclasse="Aluno" superclasse="Pessoa"/>
+        <heranca subclasse="Funcionario" superclasse="Pessoa"/>
+        <heranca subclasse="Motorista" superclasse="Pessoa"/>
+
+        <agregacao origem="Pessoa" destino="Usuario"/>
+        <agregacao origem="Perfil" destino="Usuario"/>
+    </relacoes>
+</projeto>
