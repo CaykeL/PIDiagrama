@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProjetoOrientadoAObjetos nome="SistemaDeGerenciamento">
+
+    <Classe nome="Pessoa">
+        <Responsabilidade>Entidade base para Pessoas</Responsabilidade>
+        <Atributos>
+            <Atributo nome="cpf" tipo="String" visibilidade="Privado">Armazenar o cpf</Atributo>
+            <Atributo nome="nome" tipo="String" visibilidade="Publica">Armazenar o nome completo</Atributu>
+            <Atributo nome="email" tipo="String" visibilidade="Publica">Armazenar o email</Atributo>
+            <Atributo nome="endereco" tipo="String" visibilidade="Publica">Armazenar o endereço do aluno</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="exibirDados" tipoRetorno="void" visibilidade="Publica" parametros="N/A">Exibir os dados (cpf, nome, email) da pessoa</Metodo>
+            <Metodo nome="atualizarEmail" tipoRetorno="void" visibilidade="Publica" parametros="String novoEmail">Atualizar o email</Metodo>
+            <Metodo nome="setCpf" tipoRetorno="void" visibilidade="Publica" parametros="String cpf">Alterar o cpf da Pessoa</Metodo>
+            <Metodo nome="getCpf" tipoRetorno="String" visibilidade="Publica" parametros="N/A">Obter o cpf da Pessoa</Metodo>
+            <Metodo nome="setEmail" tipoRetorno="void" visibilidade="Publica" parametros="String email">Alterar o email da Pessoa</Metodo>
+            <Metodo nome="getEmail" tipoRetorno="String" visibilidade="Publica" parametros="N/A">Obter o email da Pessoa</Metodo>
+        </Metodos>
+    </Classe>
+
+    <Classe nome="Aluno">
+        <Responsabilidade>Representa um Aluno, herda de Pessoa</Responsabilidade>
+        <Atributos>
+            <Atributo nome="instituicaoEnsino" tipo="String" visibilidade="Publica">Armazenar a Instituição de Ensino do aluno</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="atualizarEndereco" tipoRetorno="void" visibilidade="Publica" parametros="String novoEndereco">Atualizar o endereço do aluno</Metodo>
+            <Metodo nome="atualizarInstituicao" tipoRetorno="void" visibilidade="Publica" parametros="String novaInstituicao">Atualizar a instituição do aluno</Metodo>
+            <Metodo nome="confirmarPresenca" tipoRetorno="void" visibilidade="Publica" parametros="N/A">Confirmar a presença do aluno</Metodo>
+        </Metodos>
+    </Classe>
+
+    <Classe nome="ListaPresenca">
+        <Responsabilidade>Gerencia a lista de presença</Responsabilidade>
+        <Atributos>
+            <Atributo nome="nomeDoAluno" tipo="String" visibilidade="Publica">Armazenar o nome do aluno na lista</Atributo>
+            <Atributo nome="presenca" tipo="Boolean" visibilidade="Publica">Armazenar se o aluno estará presente</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="registrarPresenca" tipoRetorno="void" visibilidade="Publica" parametros="String nomeAluno">Registrar a presença do aluno</Metodo>
+            <Metodo nome="gerarRelatorio" tipoRetorno="void" visibilidade="Publica" parametros="N/A">Gerar o relatório da lista de presença</Metodo>
+        </Metodos>
+    </Classe>
+
+    <Classe nome="Usuario">
+        <Responsabilidade>Gerencia o acesso do usuário</Responsabilidade>
+        <Atributos>
+            <Atributo nome="login" tipo="String" visibilidade="Privado">Armazenar o login do usuário</Atributo>
+            <Atributo nome="senha" tipo="String" visibilidade="Privado">Armazenar a senha do usuário</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="autenticar" tipoRetorno="boolean" visibilidade="Publica" parametros="String login, String senha">Autenticar o login e senha do usuário</Metodo>
+            <Metodo nome="alterarSenha" tipoRetorno="void" visibilidade="Publica" parametros="String novaSenha">Alterar a senha do usuário</Metodo>
+            <Metodo nome="setLogin" tipoRetorno="void" visibilidade="Publica" parametros="String login">Alterar o login do usuário</Metodo>
+            <Metodo nome="getLogin" tipoRetorno="String" visibilidade="Publica" parametros="N/A">Obter o login do usuário</Metodo>
+            <Metodo nome="setSenha" tipoRetorno="void" visibilidade="Publica" parametros="String senha">Alterar a senha do usuário</Metodo>
+            <Metodo nome="getSenha" tipoRetorno="String" visibilidade="Publica" parametros="N/A">Obter a senha do usuário</Metodo>
+        </Metodos>
+    </Classe>
+
+    <Classe nome="Funcionario">
+        <Responsabilidade>Representa um Funcionário</Responsabilidade>
+        <Atributos>
+            <Atributo nome="cargo" tipo="String" visibilidade="Publica">Armazenar o cargo do funcionário</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="registrarAluno" tipoRetorno="void" visibilidade="Publica" parametros="String nomeAluno">Registrar o Aluno no sistema</Metodo>
+            <Metodo nome="gerenciarRota" tipoRetorno="void" visibilidade="Publica" parametros="String rota">Gerenciar a rota</Metodo>
+        </Metodos>
+    </Classe>
+
+    <Classe nome="Motorista">
+        <Responsabilidade>Representa um Motorista</Responsabilidade>
+        <Atributos>
+            <Atributo nome="cnh" tipo="String" visibilidade="Publica">Armazenar a cnh do motorista</Atributo>
+            <Atributo nome="rota" tipo="String" visibilidade="Publica">Armazenar a rota</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="iniciarRota" tipoRetorno="void" visibilidade="Publica" parametros="N/A">Iniciar a rota até a instituição de ensino</Metodo>
+            <Metodo nome="finalizarRota" tipoRetorno="void" visibilidade="Publica" parametros="N/A">Finalizar a rota</Metodo>
+            <Metodo nome="confirmarEmbarque" tipoRetorno="void" visibilidade="Publica" parametros="String nomeAluno">Confirmar o embarque do aluno</Metodo>
+        </Metodos>
+    </Classe>
+
+    <Classe nome="Perfil">
+        <Responsabilidade>Gerencia permissões de perfil</Responsabilidade>
+        <Atributos>
+            <Atributo nome="tipoPerfil" tipo="String" visibilidade="Publica">Armazenar o tipo do perfil</Atributo>
+            <Atributo nome="permissoes" tipo="List&lt;String&gt;" visibilidade="Publica">Armazenar as permissões dos perfis</Atributo>
+        </Atributos>
+        <Metodos>
+            <Metodo nome="atribuirPermissao" tipoRetorno="void" visibilidade="Publica" parametros="String acao">Atribuir permissões para o perfil</Metodo>
+            <Metodo nome="listarPermissoes" tipoRetorno="void" visibilidade="Publica" parametros="N/A">Listar as permissões do perfil</Metodo>
+        </Metodos>
+    </Classe>
+
+</ProjetoOrientadoAObjetos>
