@@ -5,7 +5,7 @@
         <Responsabilidade>Entidade base para Pessoas</Responsabilidade>
         <Atributos>
             <Atributo nome="cpf" tipo="String" visibilidade="Privado">Armazenar o cpf</Atributo>
-            <Atributo nome="nome" tipo="String" visibilidade="Publica">Armazenar o nome completo</Atributu>
+            <Atributo nome="nome" tipo="String" visibilidade="Publica">Armazenar o nome completo</Atributo>
             <Atributo nome="email" tipo="String" visibilidade="Publica">Armazenar o email</Atributo>
             <Atributo nome="endereco" tipo="String" visibilidade="Publica">Armazenar o endereço do aluno</Atributo>
         </Atributos>
