@@ -1,8 +1,3 @@
-Com base nas imagens fornecidas, que detalham as classes, atributos, e métodos de um projeto, irei gerar um código XML que representa essa estrutura, focando na organização e na representação das informações.
-
-Considerarei a estrutura de classes, atributos (com tipo, visibilidade e responsabilidade) e métodos (com tipo de retorno, visibilidade, parâmetros de entrada e responsabilidade).
-
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <projeto nome="Gestão de Usuários e Rota">
     <classe nome="Pessoa">
