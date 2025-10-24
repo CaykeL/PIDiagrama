@@ -1,54 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2025-10-24T19:40:00.000Z" agent="ChatGPT" version="24.7.0" editor="draw.io">
-  <diagram id="SistemaEscola" name="Sistema Escola">
-    <mxGraphModel dx="1420" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+<mxfile host="app.diagrams.net" modified="2025-10-24T00:00:00.000Z" agent="5.0 (Windows)" version="24.7.12" type="device">
+  <diagram id="projetoUML" name="Diagrama de Classes">
+    <mxGraphModel dx="2000" dy="2000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
         <!-- CLASSE PESSOA -->
-        <mxCell id="pessoa" value="Pessoa&#xa;&#xa;+ nome: String (public)&#xa;- cpf: String (private)&#xa;- email: String (private)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="60" y="60" width="200" height="120" as="geometry"/>
+        <mxCell id="Pessoa" value="Pessoa&#xa;----------------------&#xa;+ nome : String&#xa;- cpf : String&#xa;- email : String&#xa;&#xa;+ exibirDados() : void&#xa;+ atualizarEmail(novoEmail:String) : void&#xa;+ setCpf(cpf:String) : void&#xa;+ getCpf() : String&#xa;+ setEmail(email:String) : void&#xa;+ getEmail() : String" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1">
+          <mxGeometry x="120" y="80" width="230" height="250" as="geometry"/>
         </mxCell>
 
         <!-- CLASSE ALUNO -->
-        <mxCell id="aluno" value="Aluno&#xa;&#xa;+ endereco: String&#xa;+ instituicaoEnsino: String" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="320" y="30" width="200" height="90" as="geometry"/>
+        <mxCell id="Aluno" value="Aluno&#xa;----------------------&#xa;+ endereco : String&#xa;+ instituicaoEnsino : String&#xa;&#xa;+ atualizarEndereco(novoEndereco:String) : void&#xa;+ atualizarInstituicao(novaInstituicao:String) : void&#xa;+ confirmarPresenca() : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1">
+          <mxGeometry x="440" y="80" width="230" height="230" as="geometry"/>
         </mxCell>
 
-        <!-- CLASSE FUNCIONARIO -->
-        <mxCell id="funcionario" value="Funcionario&#xa;&#xa;+ cargo: String" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="320" y="160" width="200" height="80" as="geometry"/>
-        </mxCell>
-
-        <!-- CLASSE MOTORISTA -->
-        <mxCell id="motorista" value="Motorista&#xa;&#xa;+ cnh: String&#xa;+ rota: String" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="320" y="270" width="200" height="90" as="geometry"/>
+        <!-- CLASSE LISTA PRESENCA -->
+        <mxCell id="ListaPresenca" value="ListaPresenca&#xa;----------------------&#xa;+ nomeDoAluno : String&#xa;+ presenca : Boolean&#xa;&#xa;+ registrarPresenca(nomeAluno:String) : void&#xa;+ gerarRelatorio() : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry x="780" y="80" width="230" height="200" as="geometry"/>
         </mxCell>
 
         <!-- CLASSE USUARIO -->
-        <mxCell id="usuario" value="Usuario&#xa;&#xa;- login: String&#xa;- senha: String" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="60" y="250" width="200" height="90" as="geometry"/>
+        <mxCell id="Usuario" value="Usuario&#xa;----------------------&#xa;- login : String&#xa;- senha : String&#xa;&#xa;+ autenticar(login:String, senha:String) : boolean&#xa;+ alterarSenha(novaSenha:String) : void&#xa;+ setLogin(login:String) : void&#xa;+ getLogin() : String&#xa;+ setSenha(senha:String) : void&#xa;+ getSenha() : String" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1">
+          <mxGeometry x="120" y="400" width="250" height="270" as="geometry"/>
+        </mxCell>
+
+        <!-- CLASSE FUNCIONARIO -->
+        <mxCell id="Funcionario" value="Funcionario&#xa;----------------------&#xa;+ cargo : String&#xa;&#xa;+ registrarAluno(nomeAluno:String) : void&#xa;+ gerenciarRota(rota:String) : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry x="440" y="400" width="230" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- CLASSE MOTORISTA -->
+        <mxCell id="Motorista" value="Motorista&#xa;----------------------&#xa;+ cnh : String&#xa;+ rota : String&#xa;&#xa;+ iniciarRota() : void&#xa;+ finalizarRota() : void&#xa;+ confirmarEmbarque(nomeAluno:String) : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5e1e1;strokeColor=#cc6666;" vertex="1">
+          <mxGeometry x="780" y="400" width="230" height="210" as="geometry"/>
         </mxCell>
 
         <!-- CLASSE PERFIL -->
-        <mxCell id="perfil" value="Perfil&#xa;&#xa;+ tipoPerfil: String&#xa;+ permissoes: List&lt;String&gt;" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="60" y="400" width="220" height="90" as="geometry"/>
+        <mxCell id="Perfil" value="Perfil&#xa;----------------------&#xa;+ tipoPerfil : String&#xa;+ permissoes : List&lt;String&gt;&#xa;&#xa;+ atribuirPermissao(acao:String) : void&#xa;+ listarPermissoes() : void" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#3366cc;" vertex="1">
+          <mxGeometry x="120" y="720" width="250" height="200" as="geometry"/>
         </mxCell>
 
-        <!-- CLASSE LISTA PRESENÇA -->
-        <mxCell id="listaPresenca" value="ListaPresenca&#xa;&#xa;+ nomeDoAluno: String&#xa;+ presenca: Boolean" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="600" y="140" width="200" height="90" as="geometry"/>
+        <!-- HERANÇAS -->
+        <mxCell id="HerancaAluno" edge="1" source="Pessoa" target="Aluno" style="endArrow=block;endFill=0;dashed=1;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-
-        <!-- RELAÇÕES DE HERANÇA -->
-        <mxCell id="r1" value="herda" style="endArrow=block;endFill=0;strokeWidth=1.5;" edge="1" source="aluno" target="pessoa" parent="1"/>
-        <mxCell id="r2" value="herda" style="endArrow=block;endFill=0;strokeWidth=1.5;" edge="1" source="funcionario" target="pessoa" parent="1"/>
-        <mxCell id="r3" value="herda" style="endArrow=block;endFill=0;strokeWidth=1.5;" edge="1" source="motorista" target="pessoa" parent="1"/>
+        <mxCell id="HerancaFuncionario" edge="1" source="Pessoa" target="Funcionario" style="endArrow=block;endFill=0;dashed=1;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="HerancaMotorista" edge="1" source="Pessoa" target="Motorista" style="endArrow=block;endFill=0;dashed=1;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
 
         <!-- AGREGAÇÕES -->
-        <mxCell id="r4" value="agregação" style="endArrow=diamondThin;endFill=1;strokeWidth=1.5;" edge="1" source="pessoa" target="usuario" parent="1"/>
-        <mxCell id="r5" value="agregação" style="endArrow=diamondThin;endFill=1;strokeWidth=1.5;" edge="1" source="usuario" target="perfil" parent="1"/>
+        <mxCell id="AgregacaoPessoaUsuario" edge="1" source="Pessoa" target="Usuario" style="startArrow=diamondThin;startFill=0;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="AgregacaoPerfilUsuario" edge="1" source="Perfil" target="Usuario" style="startArrow=diamondThin;startFill=0;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
